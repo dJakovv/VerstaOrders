@@ -1,0 +1,22 @@
+﻿services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: VerstaOrders
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 54320:5432
+
+  backend:
+    container_name: verstaorder-backend
+    build:
+      context: .
+      dockerfile: backend/VerstaOrder/Dockerfile
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
