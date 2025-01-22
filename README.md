@@ -1,6 +1,6 @@
 Для запуска нужен docker и node js версии 20 и выше.
 Команды для запуска:
-docker compose up -d ; cd web ; npm run dev
+docker compose up -d ; cd web ; npm i ; npm run dev
 После чего можно подключиться к http://localhost:5173/.
 Пример работы:
 ![1](images/1.png)
